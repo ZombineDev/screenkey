@@ -141,7 +141,7 @@ class ListenKbd(threading.Thread):
         for name in dir(XK):
             if name[:3] == "XK_" and getattr(XK, name) == keysym:
                 if name.upper() in REPLACE_KEYS:
-                    return REPLACE_KEYS[name]
+                    return REPLACE_KEYS[name.upper()]
 
     def update_text(self, string=None, event=None):
         if event.type == X.KeyRelease:
